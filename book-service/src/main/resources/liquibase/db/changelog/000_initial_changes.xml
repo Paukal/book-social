@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
+
+    <changeSet id="000-create-sequence-books" author="paukal">
+        <createSequence sequenceName="books_seq" startValue="1" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="001-create-books-table" author="paukal">
+        <createTable tableName="books">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="author" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="publisher" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002-fill-books-table" author="paukal">
+        <sql>
+            INSERT INTO books(name, author, publisher) VALUES
+           ('To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott &amp; Co.'),
+           ('1984', 'George Orwell', 'Secker &amp; Warburg'),
+           ('Pride and Prejudice', 'Jane Austen', 'T. Egerton'),
+           ('The Great Gatsby', 'F. Scott Fitzgerald', 'Charles Scribner''s Sons'),
+           ('Moby-Dick', 'Herman Melville', 'Harper &amp; Brothers'),
+           ('War and Peace', 'Leo Tolstoy', 'The Russian Messenger'),
+           ('The Catcher in the Rye', 'J.D. Salinger', 'Little, Brown and Company'),
+           ('The Hobbit', 'J.R.R. Tolkien', 'George Allen &amp; Unwin'),
+           ('Animal Farm', 'George Orwell', 'Secker &amp; Warburg'),
+           ('Brave New World', 'Aldous Huxley', 'Chatto &amp; Windus'),
+           ('Crime and Punishment', 'Fyodor Dostoevsky', 'The Russian Messenger'),
+           ('Wuthering Heights', 'Emily Brontë', 'Thomas Cautley Newby'),
+           ('The Odyssey', 'Homer', 'Ancient Greece'),
+           ('The Lord of the Rings', 'J.R.R. Tolkien', 'Allen &amp; Unwin'),
+           ('Jane Eyre', 'Charlotte Brontë', 'Smith, Elder &amp; Co.'),
+           ('Great Expectations', 'Charles Dickens', 'Chapman &amp; Hall'),
+           ('Catch-22', 'Joseph Heller', 'Simon &amp; Schuster'),
+           ('The Brothers Karamazov', 'Fyodor Dostoevsky', 'The Russian Messenger'),
+           ('One Hundred Years of Solitude', 'Gabriel García Márquez', 'Harper &amp; Row'),
+           ('Les Misérables', 'Victor Hugo', 'A. Lacroix, Verboeckhoven &amp; Cie.'),
+           ('Ulysses', 'James Joyce', 'Shakespeare and Company'),
+           ('The Divine Comedy', 'Dante Alighieri', 'Johann Numeister and Evangelista Angelini'),
+           ('Fahrenheit 451', 'Ray Bradbury', 'Ballantine Books'),
+           ('Madame Bovary', 'Gustave Flaubert', 'Revue de Paris'),
+           ('The Kite Runner', 'Khaled Hosseini', 'Riverhead Books'),
+           ('A Tale of Two Cities', 'Charles Dickens', 'Chapman &amp; Hall'),
+           ('Dracula', 'Bram Stoker', 'Archibald Constable and Company'),
+           ('The Alchemist', 'Paulo Coelho', 'HarperTorch'),
+           ('Don Quixote', 'Miguel de Cervantes', 'Francisco de Robles'),
+           ('Lolita', 'Vladimir Nabokov', 'Olympia Press'),
+           ('Frankenstein', 'Mary Shelley', 'Lackington, Hughes, Harding, Mavor &amp; Jones'),
+           ('Anna Karenina', 'Leo Tolstoy', 'The Russian Messenger'),
+           ('The Grapes of Wrath', 'John Steinbeck', 'The Viking Press-James Lloyd'),
+           ('Slaughterhouse-Five', 'Kurt Vonnegut', 'Delacorte Press'),
+           ('The Picture of Dorian Gray', 'Oscar Wilde', 'Lippincott''s Monthly Magazine'),
+           ('Gone with the Wind', 'Margaret Mitchell', 'Macmillan Publishers'),
+           ('Sense and Sensibility', 'Jane Austen', 'T. Egerton'),
+           ('David Copperfield', 'Charles Dickens', 'Bradbury &amp; Evans'),
+           ('Rebecca', 'Daphne du Maurier', 'Victor Gollancz Ltd'),
+           ('The Shining', 'Stephen King', 'Doubleday'),
+           ('The Stranger', 'Albert Camus', 'Gallimard'),
+           ('East of Eden', 'John Steinbeck', 'Viking Press'),
+           ('Mrs. Dalloway', 'Virginia Woolf', 'Hogarth Press'),
+           ('The Sun Also Rises', 'Ernest Hemingway', 'Scribner'),
+           ('Middlemarch', 'George Eliot', 'William Blackwood and Sons'),
+           ('The Old Man and the Sea', 'Ernest Hemingway', 'Charles Scribner''s Sons'),
+           ('Winnie-the-Pooh', 'A.A. Milne', 'Methuen'),
+           ('Beloved', 'Toni Morrison', 'Alfred A. Knopf'),
+           ('Emma', 'Jane Austen', 'John Murray'),
+           ('Lord of the Flies', 'William Golding', 'Faber and Faber'),
+           ('The Handmaid''s Tale', 'Margaret Atwood', 'McClelland and Stewart'),
+           ('Persuasion', 'Jane Austen', 'John Murray'),
+           ('A Clockwork Orange', 'Anthony Burgess', 'Heinemann'),
+           ('On the Road', 'Jack Kerouac', 'Viking Press'),
+           ('Dune', 'Frank Herbert', 'Chilton Books'),
+           ('The Sound and the Fury', 'William Faulkner', 'Jonathan Cape and Harrison Smith'),
+           ('A Passage to India', 'E.M. Forster', 'Edward Arnold'),
+           ('Their Eyes Were Watching God', 'Zora Neale Hurston', 'J. B. Lippincott'),
+           ('Gulliver''s Travels', 'Jonathan Swift', 'Benjamin Motte'),
+           ('Oliver Twist', 'Charles Dickens', 'Richard Bentley'),
+           ('Blood Meridian', 'Cormac McCarthy', 'Random House'),
+           ('The Bell Jar', 'Sylvia Plath', 'Heinemann'),
+           ('The Remains of the Day', 'Kazuo Ishiguro', 'Faber and Faber'),
+           ('To the Lighthouse', 'Virginia Woolf', 'Hogarth Press'),
+           ('Mansfield Park', 'Jane Austen', 'Thomas Egerton'),
+           ('The Secret Garden', 'Frances Hodgson Burnett', 'Frederick A. Stokes'),
+           ('White Teeth', 'Zadie Smith', 'Hamish Hamilton'),
+           ('Room', 'Emma Donoghue', 'Picador'),
+           ('Native Son', 'Richard Wright', 'Harper &amp; Brothers'),
+           ('Life of Pi', 'Yann Martel', 'Knopf Canada'),
+           ('A Prayer for Owen Meany', 'John Irving', 'William Morrow'),
+           ('The Road', 'Cormac McCarthy', 'Alfred A. Knopf'),
+           ('Never Let Me Go', 'Kazuo Ishiguro', 'Faber and Faber'),
+           ('The Color Purple', 'Alice Walker', 'Harcourt Brace Jovanovich'),
+           ('Love in the Time of Cholera', 'Gabriel García Márquez', 'Alfred A. Knopf'),
+           ('The Wind-Up Bird Chronicle', 'Haruki Murakami', 'Shinchosha'),
+           ('Neuromancer', 'William Gibson', 'Ace Books'),
+           ('Atonement', 'Ian McEwan', 'Jonathan Cape'),
+           ('The Brief Wondrous Life of Oscar Wao', 'Junot Díaz', 'Riverhead Books'),
+           ('Disgrace', 'J.M. Coetzee', 'Secker &amp; Warburg'),
+           ('Americanah', 'Chimamanda Ngozi Adichie', 'Alfred A. Knopf'),
+           ('Middlesex', 'Jeffrey Eugenides', 'Farrar, Straus and Giroux'),
+           ('Infinite Jest', 'David Foster Wallace', 'Little, Brown and Company'),
+           ('Norwegian Wood', 'Haruki Murakami', 'Kodansha'),
+           ('The Goldfinch', 'Donna Tartt', 'Little, Brown and Company'),
+           ('A Fine Balance', 'Rohinton Mistry', 'McClelland &amp; Stewart'),
+           ('The God of Small Things', 'Arundhati Roy', 'IndiaInk'),
+           ('Midnight''s Children', 'Salman Rushdie', 'Jonathan Cape'),
+           ('Gone Girl', 'Gillian Flynn', 'Crown Publishing Group'),
+           ('Possession', 'A. S. Byatt', 'Chatto &amp; Windus'),
+           ('Neverwhere', 'Neil Gaiman', 'BBC Books'),
+           ('White Noise', 'Don DeLillo', 'Viking Press'),
+           ('The Name of the Rose', 'Umberto Eco', 'Bompiani'),
+           ('The Shadow of the Wind', 'Carlos Ruiz Zafón', 'Planeta'),
+           ('The Curious Incident of the Dog in the Night-Time', 'Mark Haddon', 'Jonathan Cape'),
+           ('13 Reasons Why', 'Jay Asher', 'Razorbill'),
+           ('Cloud Atlas', 'David Mitchell', 'Sceptre'),
+           ('A Suitable Boy', 'Vikram Seth', 'Orion Publishing Group'),
+           ('Water for Elephants', 'Sara Gruen', 'Algonquin Books')
+            ;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

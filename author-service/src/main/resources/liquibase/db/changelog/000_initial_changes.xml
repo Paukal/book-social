@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
+
+    <changeSet id="000-create-sequence-authors" author="paukal">
+        <createSequence sequenceName="authors_seq" startValue="1" incrementBy="50"/>
+    </changeSet>
+
+    <changeSet id="001-create-authors-table" author="paukal">
+        <createTable tableName="authors">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="003-fill-authors-table" author="paukal">
+        <insert tableName="authors">
+            <column name="first_name" value="Harper"/>
+            <column name="last_name" value="Lee"/>
+            <column name="code" valueNumeric="1000"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="George"/>
+            <column name="last_name" value="Orwell"/>
+            <column name="code" valueNumeric="1001"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Jane"/>
+            <column name="last_name" value="Austen"/>
+            <column name="code" valueNumeric="1002"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="F. Scott"/>
+            <column name="last_name" value="Fitzgerald"/>
+            <column name="code" valueNumeric="1003"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Herman"/>
+            <column name="last_name" value="Melville"/>
+            <column name="code" valueNumeric="1004"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Leo"/>
+            <column name="last_name" value="Tolstoy"/>
+            <column name="code" valueNumeric="1005"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="J.D."/>
+            <column name="last_name" value="Salinger"/>
+            <column name="code" valueNumeric="1006"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="J.R.R."/>
+            <column name="last_name" value="Tolkien"/>
+            <column name="code" valueNumeric="1007"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Aldous"/>
+            <column name="last_name" value="Huxley"/>
+            <column name="code" valueNumeric="1008"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Fyodor"/>
+            <column name="last_name" value="Dostoevsky"/>
+            <column name="code" valueNumeric="1009"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Emily"/>
+            <column name="last_name" value="Brontë"/>
+            <column name="code" valueNumeric="1010"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Homer"/>
+            <column name="last_name" value=""/>
+            <column name="code" valueNumeric="1011"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Charlotte"/>
+            <column name="last_name" value="Brontë"/>
+            <column name="code" valueNumeric="1012"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Charles"/>
+            <column name="last_name" value="Dickens"/>
+            <column name="code" valueNumeric="1013"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Joseph"/>
+            <column name="last_name" value="Heller"/>
+            <column name="code" valueNumeric="1014"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Gabriel"/>
+            <column name="last_name" value="García Márquez"/>
+            <column name="code" valueNumeric="1015"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Victor"/>
+            <column name="last_name" value="Hugo"/>
+            <column name="code" valueNumeric="1016"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="James"/>
+            <column name="last_name" value="Joyce"/>
+            <column name="code" valueNumeric="1017"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Dante"/>
+            <column name="last_name" value="Alighieri"/>
+            <column name="code" valueNumeric="1018"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Ray"/>
+            <column name="last_name" value="Bradbury"/>
+            <column name="code" valueNumeric="1019"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Gustave"/>
+            <column name="last_name" value="Flaubert"/>
+            <column name="code" valueNumeric="1020"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Khaled"/>
+            <column name="last_name" value="Hosseini"/>
+            <column name="code" valueNumeric="1021"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Bram"/>
+            <column name="last_name" value="Stoker"/>
+            <column name="code" valueNumeric="1022"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Paulo"/>
+            <column name="last_name" value="Coelho"/>
+            <column name="code" valueNumeric="1023"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Miguel"/>
+            <column name="last_name" value="de Cervantes"/>
+            <column name="code" valueNumeric="1024"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Vladimir"/>
+            <column name="last_name" value="Nabokov"/>
+            <column name="code" valueNumeric="1025"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Mary"/>
+            <column name="last_name" value="Shelley"/>
+            <column name="code" valueNumeric="1026"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="John"/>
+            <column name="last_name" value="Steinbeck"/>
+            <column name="code" valueNumeric="1027"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Kurt"/>
+            <column name="last_name" value="Vonnegut"/>
+            <column name="code" valueNumeric="1028"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Oscar"/>
+            <column name="last_name" value="Wilde"/>
+            <column name="code" valueNumeric="1029"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Margaret"/>
+            <column name="last_name" value="Mitchell"/>
+            <column name="code" valueNumeric="1030"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Daphne"/>
+            <column name="last_name" value="du Maurier"/>
+            <column name="code" valueNumeric="1031"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Stephen"/>
+            <column name="last_name" value="King"/>
+            <column name="code" valueNumeric="1032"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Virginia"/>
+            <column name="last_name" value="Woolf"/>
+            <column name="code" valueNumeric="1033"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Ernest"/>
+            <column name="last_name" value="Hemingway"/>
+            <column name="code" valueNumeric="1034"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="George"/>
+            <column name="last_name" value="Eliot"/>
+            <column name="code" valueNumeric="1035"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="A.A."/>
+            <column name="last_name" value="Milne"/>
+            <column name="code" valueNumeric="1036"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Toni"/>
+            <column name="last_name" value="Morrison"/>
+            <column name="code" valueNumeric="1037"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="William"/>
+            <column name="last_name" value="Golding"/>
+            <column name="code" valueNumeric="1038"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Margaret"/>
+            <column name="last_name" value="Atwood"/>
+            <column name="code" valueNumeric="1039"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Anthony"/>
+            <column name="last_name" value="Burgess"/>
+            <column name="code" valueNumeric="1040"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Jack"/>
+            <column name="last_name" value="Kerouac"/>
+            <column name="code" valueNumeric="1041"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Frank"/>
+            <column name="last_name" value="Herbert"/>
+            <column name="code" valueNumeric="1042"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="William"/>
+            <column name="last_name" value="Faulkner"/>
+            <column name="code" valueNumeric="1043"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="E.M."/>
+            <column name="last_name" value="Forster"/>
+            <column name="code" valueNumeric="1044"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Zora"/>
+            <column name="last_name" value="Neale Hurston"/>
+            <column name="code" valueNumeric="1045"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Jonathan"/>
+            <column name="last_name" value="Swift"/>
+            <column name="code" valueNumeric="1046"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Cormac"/>
+            <column name="last_name" value="McCarthy"/>
+            <column name="code" valueNumeric="1047"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Sylvia"/>
+            <column name="last_name" value="Plath"/>
+            <column name="code" valueNumeric="1048"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Kazuo"/>
+            <column name="last_name" value="Ishiguro"/>
+            <column name="code" valueNumeric="1049"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Frances Hodgson"/>
+            <column name="last_name" value="Burnett"/>
+            <column name="code" valueNumeric="1050"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Richard"/>
+            <column name="last_name" value="Wright"/>
+            <column name="code" valueNumeric="1051"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Yann"/>
+            <column name="last_name" value="Martel"/>
+            <column name="code" valueNumeric="1052"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="John"/>
+            <column name="last_name" value="Irving"/>
+            <column name="code" valueNumeric="1053"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Alice"/>
+            <column name="last_name" value="Walker"/>
+            <column name="code" valueNumeric="1054"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Haruki"/>
+            <column name="last_name" value="Murakami"/>
+            <column name="code" valueNumeric="1055"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="William"/>
+            <column name="last_name" value="Gibson"/>
+            <column name="code" valueNumeric="1056"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Ian"/>
+            <column name="last_name" value="McEwan"/>
+            <column name="code" valueNumeric="1057"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Junot"/>
+            <column name="last_name" value="Díaz"/>
+            <column name="code" valueNumeric="1058"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="J.M."/>
+            <column name="last_name" value="Coetzee"/>
+            <column name="code" valueNumeric="1059"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Chimamanda Ngozi"/>
+            <column name="last_name" value="Adichie"/>
+            <column name="code" valueNumeric="1060"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Jeffrey"/>
+            <column name="last_name" value="Eugenides"/>
+            <column name="code" valueNumeric="1061"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="David Foster"/>
+            <column name="last_name" value="Wallace"/>
+            <column name="code" valueNumeric="1062"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Donna"/>
+            <column name="last_name" value="Tartt"/>
+            <column name="code" valueNumeric="1063"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Rohinton"/>
+            <column name="last_name" value="Mistry"/>
+            <column name="code" valueNumeric="1064"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Arundhati"/>
+            <column name="last_name" value="Roy"/>
+            <column name="code" valueNumeric="1065"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Salman"/>
+            <column name="last_name" value="Rushdie"/>
+            <column name="code" valueNumeric="1066"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Gillian"/>
+            <column name="last_name" value="Flynn"/>
+            <column name="code" valueNumeric="1067"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="A. S."/>
+            <column name="last_name" value="Byatt"/>
+            <column name="code" valueNumeric="1068"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Neil"/>
+            <column name="last_name" value="Gaiman"/>
+            <column name="code" valueNumeric="1069"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Don"/>
+            <column name="last_name" value="DeLillo"/>
+            <column name="code" valueNumeric="1070"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Umberto"/>
+            <column name="last_name" value="Eco"/>
+            <column name="code" valueNumeric="1071"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Carlos Ruiz"/>
+            <column name="last_name" value="Zafón"/>
+            <column name="code" valueNumeric="1072"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Mark"/>
+            <column name="last_name" value="Haddon"/>
+            <column name="code" valueNumeric="1073"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Jay"/>
+            <column name="last_name" value="Asher"/>
+            <column name="code" valueNumeric="1074"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="David"/>
+            <column name="last_name" value="Mitchell"/>
+            <column name="code" valueNumeric="1075"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Vikram"/>
+            <column name="last_name" value="Seth"/>
+            <column name="code" valueNumeric="1076"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="first_name" value="Sara"/>
+            <column name="last_name" value="Gruen"/>
+            <column name="code" valueNumeric="1077"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
